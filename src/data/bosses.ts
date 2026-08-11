@@ -61,7 +61,8 @@ export const BOSSES: BossInfo[] = [
     id: 'balthazar', name: 'Balthazar', act: 'Act 2', location: 'Gauntlet of Shar',
     legendary: 'The Dead Wastes — when a creature dies, creates necrotic miasma (heals undead 4d6, deals 4d6 Necrotic to the living). Also Spectral Aspect after being struck.',
     tips: 'Every death fuels his miasma — burst him down before clearing minions, or fight near the entrance and retreat from miasma zones. Necrotic resistance is gold here.',
-    stats: { level: 8, hp: 91, str: 10, dex: 14, con: 16, int: 20, wis: 14, cha: 10 }, // AC not listed on the wiki
+    stats: { level: 8, hp: 91, ac: 15, str: 10, dex: 14, con: 16, int: 20, wis: 14, cha: 10 }, // AC from Fextralife
+    statsNote: 'AC 17 if fought in the Shadowfell. Immune to Slashing/Piercing/Bludgeoning and Poison; resists Fire, Lightning, Psychic.',
   },
   {
     id: 'ketheric', name: 'Ketheric Thorm (+ Apostle of Myrkul)', act: 'Act 2', location: 'Moonrise Towers rooftop → Mind Flayer Colony',
