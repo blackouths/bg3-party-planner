@@ -8,6 +8,7 @@ export interface RaceInfo {
   subraces?: string[];
   skillGrants?: SkillName[];   // fixed proficiencies (e.g. Elf Perception)
   bonusSkillChoices?: number;  // extra free picks (Human versatility)
+  resistances?: string[];      // innate damage resistances (Tiefling fire)
 }
 
 // Core BG3 races. Ability boosts in BG3 are player-assigned (stored on the
@@ -46,6 +47,7 @@ export const RACES: Record<string, RaceInfo> = {
   Tiefling: {
     name: 'Tiefling', speedM: 9, darkvisionM: 12, size: 'Medium',
     subraces: ['Asmodeus Tiefling', 'Mephistopheles Tiefling', 'Zariel Tiefling'],
+    resistances: ['Fire'], // Hellish Resistance
   },
   'Half-Orc': { name: 'Half-Orc', speedM: 9, darkvisionM: 12, size: 'Medium' },
   Githyanki: { name: 'Githyanki', speedM: 9, darkvisionM: 0, size: 'Medium' },

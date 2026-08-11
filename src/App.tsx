@@ -2,15 +2,17 @@ import { useState } from 'react';
 import PartyView from './views/PartyView';
 import BuildView from './views/BuildView';
 import GearView from './views/GearView';
+import BossesView from './views/BossesView';
 import { usePartyStore } from './store/partyStore';
 import { buildShareUrl } from './model/share';
 
-type Tab = 'party' | 'build' | 'gear';
+type Tab = 'party' | 'build' | 'gear' | 'bosses';
 
 const TABS: { id: Tab; label: string }[] = [
   { id: 'party', label: 'Party' },
   { id: 'build', label: 'Build' },
   { id: 'gear', label: 'Gear' },
+  { id: 'bosses', label: 'Bosses' },
 ];
 
 export default function App() {
@@ -70,6 +72,7 @@ export default function App() {
         {tab === 'party' && <PartyView />}
         {tab === 'build' && <BuildView />}
         {tab === 'gear' && <GearView />}
+        {tab === 'bosses' && <BossesView />}
       </main>
     </div>
   );
