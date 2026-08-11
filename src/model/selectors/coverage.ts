@@ -66,15 +66,20 @@ export function partySkillCoverage(party: Party): SkillCoverage[] {
 export interface SpellCoverage {
   spell: string;
   covered: boolean;
-  by: { name: string; via: 'class' | 'gear' | 'buff' }[];
+  by: { name: string; via: 'known' | 'class' | 'gear' | 'buff' }[];
 }
 
 export function utilitySpellCoverage(party: Party): SpellCoverage[] {
   const roster = members(party);
   return UTILITY_SPELLS.map((spell) => {
-    const by: { name: string; via: 'class' | 'gear' | 'buff' }[] = [];
+    const by: { name: string; via: 'known' | 'class' | 'gear' | 'buff' }[] = [];
     roster.forEach((c, i) => {
       const name = displayName(c, i);
+      // An explicitly picked spell is the strongest signal; class lists are a
+      // "this class can bring it" heuristic used when nothing is picked.
+      const fromKnown = c.spells.known.some(
+        (n) => n.toLowerCase() === spell.toLowerCase(),
+      );
       const fromClass = c.classes.some((cl) =>
         CLASSES[cl.class]?.utilitySpells?.includes(spell),
       );
@@ -84,7 +89,8 @@ export function utilitySpellCoverage(party: Party): SpellCoverage[] {
       const fromBuff = buffEffects(c).some(
         (e) => e.kind === 'grantsSpell' && e.spell === spell,
       );
-      if (fromClass) by.push({ name, via: 'class' });
+      if (fromKnown) by.push({ name, via: 'known' });
+      else if (fromClass) by.push({ name, via: 'class' });
       else if (fromGear) by.push({ name, via: 'gear' });
       else if (fromBuff) by.push({ name, via: 'buff' });
     });

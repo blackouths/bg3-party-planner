@@ -368,6 +368,56 @@ body {
 }
 .feat-desc { color: var(--text-muted); font-size: 12px; flex-basis: 100%; padding-left: 2px; }
 
+/* Spell picker */
+.known-spells {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.known-spell {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg);
+  border: 1px solid var(--gold-dim);
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 12px;
+  color: var(--text);
+}
+.spell-chip {
+  font-size: 9px;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-left: 4px;
+}
+.spell-list {
+  max-height: 340px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.spell-row {
+  text-align: left;
+  background: var(--bg-slot);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 7px 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.spell-row:hover { border-color: var(--gold-dim); background: #2b2318; }
+.spell-name { color: var(--text); font-size: 13px; font-weight: 600; }
+.spell-meta { color: var(--text-muted); font-size: 11px; display: flex; align-items: baseline; }
+.spell-extra { color: var(--text-muted); font-size: 11px; }
+.sheet-spells { font-size: 11px; color: var(--text); line-height: 1.6; }
+
 /* Permanent buffs */
 .buff-act-head {
   margin: 14px 0 6px;

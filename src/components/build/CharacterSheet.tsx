@@ -91,6 +91,13 @@ export default function CharacterSheet({ member }: { member: Character }) {
         </div>
       </div>
 
+      {member.spells.known.length > 0 && (
+        <div className="sheet-section">
+          <h4>Known Spells <span className="count">{member.spells.known.length}</span></h4>
+          <div className="sheet-spells">{member.spells.known.join(' · ')}</div>
+        </div>
+      )}
+
       {member.buffs.length > 0 && (
         <div className="sheet-section">
           <h4>Permanent Buffs</h4>

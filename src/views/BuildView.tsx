@@ -5,6 +5,7 @@ import AbilityEditor from '../components/build/AbilityEditor';
 import ClassEditor from '../components/build/ClassEditor';
 import SkillPicker from '../components/build/SkillPicker';
 import FeatPicker from '../components/build/FeatPicker';
+import SpellPicker from '../components/build/SpellPicker';
 import BuffPicker from '../components/build/BuffPicker';
 import CharacterSheet from '../components/build/CharacterSheet';
 
@@ -105,6 +106,7 @@ export default function BuildView() {
             <AbilityEditor member={member} slot={activeSlot} />
             <SkillPicker member={member} slot={activeSlot} />
             <FeatPicker member={member} slot={activeSlot} />
+            <SpellPicker member={member} slot={activeSlot} />
             <BuffPicker member={member} slot={activeSlot} />
           </div>
 
