@@ -34,6 +34,25 @@ export default function BossesView() {
                 <span className="act-chip">{boss.act}</span>
               </div>
               <div className="boss-location">{boss.location}</div>
+
+              {boss.stats && (
+                <div className="boss-stats">
+                  <div className="boss-stat-line">
+                    <span className="boss-stat"><b>Lv</b> {boss.stats.level}</span>
+                    <span className="boss-stat"><b>HP</b> {boss.stats.hp}</span>
+                    <span className="boss-stat"><b>AC</b> {boss.stats.ac ?? '—'}</span>
+                  </div>
+                  <div className="boss-stat-line boss-abilities">
+                    {(['str', 'dex', 'con', 'int', 'wis', 'cha'] as const).map((a) => (
+                      <span key={a} className="boss-stat">
+                        <b>{a.toUpperCase()}</b> {boss.stats![a]}
+                      </span>
+                    ))}
+                  </div>
+                  {boss.statsNote && <div className="boss-stat-note">{boss.statsNote}</div>}
+                </div>
+              )}
+
               <div className="boss-legendary">⚡ {boss.legendary}</div>
               <div className="boss-tips">{boss.tips}</div>
             </div>
