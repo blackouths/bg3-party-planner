@@ -368,6 +368,8 @@ body {
 }
 .feat-desc { color: var(--text-muted); font-size: 12px; flex-basis: 100%; padding-left: 2px; }
 
+.preset-btn { margin-top: 8px; font-size: 12px; padding: 5px 10px; }
+
 /* Spell picker */
 .known-spells {
   display: flex;

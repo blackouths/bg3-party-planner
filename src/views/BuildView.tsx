@@ -1,6 +1,7 @@
 import { usePartyStore } from '../store/partyStore';
 import { RACES, RACE_NAMES } from '../data/races';
 import { BACKGROUND_NAMES } from '../data/backgrounds';
+import { COMPANION_PRESETS, presetPatch } from '../data/companions';
 import AbilityEditor from '../components/build/AbilityEditor';
 import ClassEditor from '../components/build/ClassEditor';
 import SkillPicker from '../components/build/SkillPicker';
@@ -61,6 +62,24 @@ export default function BuildView() {
                     {ORIGINS.map((o) => <option key={o} value={o}>{o}</option>)}
                   </select>
                 </label>
+                {COMPANION_PRESETS[member.origin] && (
+                  <button
+                    className="action-btn preset-btn"
+                    onClick={() => {
+                      const preset = COMPANION_PRESETS[member.origin];
+                      if (window.confirm(
+                        `Apply ${member.origin}'s canonical build? This replaces race, class, background, abilities, skills, and feats.`,
+                      )) {
+                        updateMember(activeSlot, {
+                          name: member.name || member.origin,
+                          ...presetPatch(preset),
+                        });
+                      }
+                    }}
+                  >
+                    Apply {member.origin} preset
+                  </button>
+                )}
                 <label className="field">
                   <span>Race</span>
                   <select
