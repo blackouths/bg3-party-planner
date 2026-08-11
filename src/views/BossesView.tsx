@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import type { Act } from '../model/types';
 import { BOSSES } from '../data/bosses';
+import { detectTerms } from '../model/glossaryIndex';
+import EffectText from '../components/EffectText';
 
 const ACTS: (Act | 'All Acts')[] = ['All Acts', 'Act 1', 'Act 2', 'Act 3'];
 
@@ -53,8 +55,12 @@ export default function BossesView() {
                 </div>
               )}
 
-              <div className="boss-legendary">⚡ {boss.legendary}</div>
-              <div className="boss-tips">{boss.tips}</div>
+              <div className="boss-legendary">
+                ⚡ <EffectText text={boss.legendary} terms={detectTerms(boss.legendary)} />
+              </div>
+              <div className="boss-tips">
+                <EffectText text={boss.tips} terms={detectTerms(boss.tips)} />
+              </div>
             </div>
           ))}
         </div>

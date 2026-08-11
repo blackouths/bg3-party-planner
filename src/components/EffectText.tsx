@@ -1,15 +1,16 @@
 import { Fragment, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import type { GlossaryEntry, MagicItem } from '../model/types';
+import type { GlossaryEntry } from '../model/types';
 import { lookupTerm } from '../model/glossaryIndex';
 
-// Renders an item's effect line with recognized glossary terms wrapped in a
-// hover tooltip (e.g. "Psychic Leech" shows the passive's full description).
-// The tooltip renders into document.body with fixed positioning so it is never
-// clipped by scrollable containers, and flips below the term near the top of
-// the viewport.
-export default function EffectText({ text, item }: { text: string; item: MagicItem }) {
-  const parts = useMemo(() => splitByTerms(text, item.terms ?? []), [text, item.terms]);
+// Renders text with recognized glossary terms wrapped in a hover tooltip
+// (e.g. "Psychic Leech" shows the passive's full description). `terms` names
+// which glossary entries to link — items carry a scraped list, prose callers
+// can use detectTerms(). The tooltip renders into document.body with fixed
+// positioning so it is never clipped by scrollable containers, and flips
+// below the term near the top of the viewport.
+export default function EffectText({ text, terms }: { text: string; terms: string[] }) {
+  const parts = useMemo(() => splitByTerms(text, terms), [text, terms]);
 
   return (
     <>

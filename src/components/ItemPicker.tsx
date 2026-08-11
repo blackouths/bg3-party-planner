@@ -112,7 +112,7 @@ function ItemRow({ item, onPick }: { item: MagicItem; onPick: () => void }) {
           {item.effectsText.slice(0, 3).map((line, i) => (
             <span key={i}>
               {i > 0 && ' • '}
-              <EffectText text={line} item={item} />
+              <EffectText text={line} terms={item.terms ?? []} />
             </span>
           ))}
         </div>
