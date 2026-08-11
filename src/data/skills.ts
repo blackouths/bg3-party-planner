@@ -1,0 +1,25 @@
+import type { Ability, SkillName } from '../model/types';
+
+// Each skill's governing ability. Order matches the in-game skill list.
+export const SKILL_ABILITY: Record<SkillName, Ability> = {
+  Athletics: 'STR',
+  Acrobatics: 'DEX',
+  'Sleight of Hand': 'DEX',
+  Stealth: 'DEX',
+  Arcana: 'INT',
+  History: 'INT',
+  Investigation: 'INT',
+  Nature: 'INT',
+  Religion: 'INT',
+  'Animal Handling': 'WIS',
+  Insight: 'WIS',
+  Medicine: 'WIS',
+  Perception: 'WIS',
+  Survival: 'WIS',
+  Deception: 'CHA',
+  Intimidation: 'CHA',
+  Performance: 'CHA',
+  Persuasion: 'CHA',
+};
+
+export const SKILL_NAMES = Object.keys(SKILL_ABILITY) as SkillName[];
