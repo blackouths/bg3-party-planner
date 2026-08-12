@@ -19,6 +19,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, '..', 'src', 'data');
 const OUT_FILE = join(OUT_DIR, 'items.json');
 const GLOSSARY_FILE = join(OUT_DIR, 'glossary.json');
+const CONSUMABLES_FILE = join(OUT_DIR, 'consumables.json');
 
 const BASE = 'https://bg3.wiki/wiki/Special:CargoExport';
 const PAGE_SIZE = 500;
@@ -81,7 +82,7 @@ async function fetchPage(url, table, offset) {
   throw new Error(`${table} @${offset}: exhausted retries`);
 }
 
-async function cargoExport(table, fields) {
+async function cargoExport(table, fields, where) {
   const rows = [];
   let offset = 0;
   for (;;) {
@@ -92,6 +93,7 @@ async function cargoExport(table, fields) {
       limit: String(PAGE_SIZE),
       offset: String(offset),
     });
+    if (where) params.set('where', where);
     const page = await fetchPage(`${BASE}?${params.toString()}`, table, offset);
     rows.push(...page);
     process.stdout.write(`  ${table}: ${rows.length}\r`);
@@ -477,9 +479,45 @@ async function main() {
   for (const it of items) if (!byId.has(it.id)) byId.set(it.id, it);
   const final = [...byId.values()].sort((a, b) => a.name.localeCompare(b.name));
 
+  // Consumables: elixirs + weapon coatings from misc_items.
+  const miscRows = await cargoExport('misc_items', [
+    '_pageName=page', 'name=name', 'type=type', 'rarity=rarity',
+    'effect=effect', 'description=description', 'condition_duration=duration',
+    'price=price', 'weight_kg=weightKg', 'legacy=legacy',
+  ], "misc_items.type IN ('Elixirs','Coatings')");
+  const consumables = new Map();
+  for (const row of miscRows) {
+    if (!isPlayable(row)) continue;
+    let cname = cleanWikitext(row.name || row.page);
+    if (/\.(png|webp|jpg)$/i.test(cname)) cname = cleanWikitext(row.page);
+    if (!cname) continue;
+    const cleanPage = cleanWikitext(row.page) || cname;
+    const id = slugify(cleanPage);
+    if (consumables.has(id)) continue;
+    const effectLines = toEffectLines(row.effect);
+    if (!effectLines.length) effectLines.push(...toEffectLines(row.description).slice(0, 2));
+    if (row.duration) effectLines.push(`Duration: ${cleanWikitext(row.duration)} turns`);
+    const item = {
+      id, name: cname,
+      slot: row.type === 'Elixirs' ? 'Elixir' : 'Coating',
+      itemType: row.type === 'Elixirs' ? 'Elixir' : 'Weapon Coating',
+      rarity: RARITY[row.rarity] || 'Common',
+      effectsText: effectLines, effects: [],
+      source: { where: '' },
+      wikiUrl: `https://bg3.wiki/wiki/${encodeURIComponent(cleanPage)}`,
+    };
+    if (row.weightKg) item.weightKg = Number(row.weightKg);
+    if (row.price) item.price = Number(row.price);
+    consumables.set(id, item);
+  }
+  const consumablesFinal = [...consumables.values()]
+    .sort((a, b) => a.slot.localeCompare(b.slot) || a.name.localeCompare(b.name));
+
   await mkdir(OUT_DIR, { recursive: true });
   await writeFile(OUT_FILE, JSON.stringify(final, null, 2));
   await writeFile(GLOSSARY_FILE, JSON.stringify(glossary));
+  await writeFile(CONSUMABLES_FILE, JSON.stringify(consumablesFinal, null, 2));
+  console.log(`Consumables: ${consumablesFinal.length} -> ${CONSUMABLES_FILE}`);
 
   // Summary.
   const byRarity = {};

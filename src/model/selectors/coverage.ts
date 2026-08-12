@@ -13,7 +13,7 @@ const displayName = (c: Character, i: number) => c.name || `Slot ${i + 1}`;
 
 // Identity strings a character contributes to dialogue-tag coverage.
 function candidates(c: Character): string[] {
-  const out = [c.race, c.subrace, c.background, c.origin];
+  const out = [c.race, c.subrace, c.background, c.origin, c.deity];
   for (const cl of c.classes) {
     out.push(cl.class);
     if (cl.subclass) out.push(cl.subclass);

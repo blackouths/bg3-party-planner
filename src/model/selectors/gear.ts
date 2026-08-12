@@ -1,5 +1,6 @@
 import type { Character, MagicItem, ParsedEffect, Party } from '../types';
 import { getItem } from '../itemIndex';
+import { CONSUMABLE_SLOTS } from '../../data/gearSlots';
 
 // Resolve the concrete MagicItems a character has equipped.
 export function equippedItems(character: Character): MagicItem[] {
@@ -33,6 +34,8 @@ export function partyGearConflicts(party: Party): GearConflict[] {
     const who = member.name || `Slot ${i + 1}`;
     for (const [gearSlot, itemId] of Object.entries(member.equipment)) {
       if (!itemId) continue;
+      // Elixirs/coatings are stockpileable — the whole party can run the same one.
+      if (CONSUMABLE_SLOTS.has(gearSlot)) continue;
       const list = uses.get(itemId) ?? [];
       list.push({ member: who, gearSlot });
       uses.set(itemId, list);

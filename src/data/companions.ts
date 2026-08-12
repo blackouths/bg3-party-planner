@@ -8,6 +8,7 @@ export interface CompanionPreset {
   race: string;
   subrace?: string;
   background: string;
+  deity?: string;                     // Clerics only
   class: string;
   subclass?: string;
   abilities: Record<Ability, number>; // final scores incl. the default +2/+1
@@ -44,7 +45,7 @@ export const COMPANION_PRESETS: Record<string, CompanionPreset> = {
   },
   Shadowheart: {
     race: 'Half-Elf', subrace: 'High Half-Elf', background: 'Acolyte',
-    class: 'Cleric', subclass: 'Trickery Domain',
+    deity: 'Shar', class: 'Cleric', subclass: 'Trickery Domain',
     abilities: { STR: 13, DEX: 13, CON: 14, INT: 10, WIS: 17, CHA: 8 },
   },
   Wyll: {
@@ -79,6 +80,7 @@ export function presetPatch(preset: CompanionPreset): Partial<Character> {
     race: preset.race,
     subrace: preset.subrace,
     background: preset.background,
+    deity: preset.deity,
     classes: [{ class: preset.class, subclass: preset.subclass, level: 1 }],
     baseAbilities,
     abilityBoosts: [

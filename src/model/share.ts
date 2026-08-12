@@ -47,6 +47,7 @@ function sanitizeMember(raw: unknown): Character | null {
     ...(typeof m.race === 'string' && { race: m.race }),
     ...(typeof m.subrace === 'string' && { subrace: m.subrace }),
     ...(typeof m.background === 'string' && { background: m.background }),
+    ...(typeof m.deity === 'string' && { deity: m.deity }),
     classes: Array.isArray(m.classes) && m.classes.length ? m.classes : base.classes,
     baseAbilities: { ...base.baseAbilities, ...(m.baseAbilities ?? {}) },
     abilityBoosts: Array.isArray(m.abilityBoosts) ? m.abilityBoosts : [],

@@ -25,13 +25,15 @@ export type Act = 'Act 1' | 'Act 2' | 'Act 3';
 export type EquipSlot =
   | 'MeleeWeapon' | 'RangedWeapon' | 'Shield'
   | 'Head' | 'Cloak' | 'Chest' | 'Gloves' | 'Boots'
-  | 'Amulet' | 'Ring' | 'Instrument';
+  | 'Amulet' | 'Ring' | 'Instrument'
+  | 'Elixir' | 'Coating'; // planned consumables, not worn equipment
 
 // Concrete slot instances a Character equips into (two rings, main/off hand).
 export type GearSlotInstance =
   | 'MeleeMain' | 'MeleeOff' | 'RangedMain' | 'RangedOff' | 'Shield'
   | 'Head' | 'Cloak' | 'Chest' | 'Gloves' | 'Boots'
-  | 'Amulet' | 'Ring1' | 'Ring2' | 'Instrument';
+  | 'Amulet' | 'Ring1' | 'Ring2' | 'Instrument'
+  | 'Elixir' | 'Coating';
 
 // ---------- Magic items (scraped from bg3.wiki -> src/data/items.json) ----------
 
@@ -127,6 +129,7 @@ export interface Character {
   race: string;
   subrace?: string;
   background: string;
+  deity?: string;               // Cleric deity (feeds dialogue-tag coverage)
   classes: ClassLevel[];          // ordered; first entry is the starting class
   baseAbilities: Record<Ability, number>;  // point-buy result, pre-race
   abilityBoosts: AbilityBoost[];  // racial +2/+1, feats/ASI (item boosts derived, not stored)

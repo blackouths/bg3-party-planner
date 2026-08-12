@@ -21,4 +21,10 @@ export const GEAR_SLOTS: GearSlotDef[] = [
   { slot: 'MeleeOff', label: 'Melee (off)', accepts: 'MeleeWeapon' },
   { slot: 'RangedMain', label: 'Ranged', accepts: 'RangedWeapon' },
   { slot: 'Shield', label: 'Shield', accepts: 'Shield' },
+  { slot: 'Elixir', label: 'Elixir', accepts: 'Elixir' },
+  { slot: 'Coating', label: 'Weapon Coating', accepts: 'Coating' },
 ];
+
+// Consumable slots — buyable/craftable in multiples, so exempt from
+// unique-item conflict detection.
+export const CONSUMABLE_SLOTS = new Set<string>(['Elixir', 'Coating']);

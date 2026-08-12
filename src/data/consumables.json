@@ -1,0 +1,1182 @@
+[
+  {
+    "id": "arsonist-s-oil",
+    "name": "Arsonist's Oil",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Coat your active weapon in Arsonist's Oil.",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Arsonist's%20Oil",
+    "weightKg": 0.1,
+    "price": 25
+  },
+  {
+    "id": "basic-poison",
+    "name": "Basic Poison",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Common",
+    "effectsText": [
+      "Applies Coated in Basic Poison to your active weapon.",
+      "Action",
+      "Throw the poison.",
+      "Range: 18 m (60 ft)",
+      "Creates area: Poison Cloud",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Basic%20Poison",
+    "weightKg": 0.2,
+    "price": 20
+  },
+  {
+    "id": "crawler-mucus",
+    "name": "Crawler Mucus",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Rare",
+    "effectsText": [
+      "Coat your active weapon with Crawler Mucus",
+      "Action",
+      "Throw the poison.",
+      "Range: 18 m (60 ft)",
+      "Creates area: Crawler Mucus",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Crawler%20Mucus",
+    "weightKg": 0.2,
+    "price": 50
+  },
+  {
+    "id": "diluted-oil-of-sharpness",
+    "name": "Diluted Oil of Sharpness",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Coat your active weapon in Oil of Sharpness, making it magical and giving it a +1 Weapon Enchantment.",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Diluted%20Oil%20of%20Sharpness",
+    "weightKg": 0.1,
+    "price": 25
+  },
+  {
+    "id": "drow-poison",
+    "name": "Drow Poison",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Coat your active weapon with drow poison.",
+      "Action",
+      "Throw the poison to create a Drow Poison Cloud",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Drow%20Poison",
+    "weightKg": 0.2,
+    "price": 30
+  },
+  {
+    "id": "karabasan-s-poison",
+    "name": "Karabasan's Poison",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Rare",
+    "effectsText": [
+      "Coat your active weapon with poison.",
+      "Action",
+      "Throw the poison.",
+      "Range: 18 m (60 ft)",
+      "Creates area: Crawler Mucus",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Karabasan's%20Poison",
+    "weightKg": 0.2,
+    "price": 50
+  },
+  {
+    "id": "malice",
+    "name": "Malice",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Rare",
+    "effectsText": [
+      "Applies Coated in Malice to your active weapon",
+      "Action",
+      "Throw the potion.",
+      "Range: 18 m (60 ft)",
+      "Creates area: Malice",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Malice",
+    "weightKg": 0.2,
+    "price": 90
+  },
+  {
+    "id": "oil-of-accuracy",
+    "name": "Oil of Accuracy",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Coat your active weapon with Oil of Accuracy. Grants weapon +2 on attack rolls.",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Oil%20of%20Accuracy",
+    "weightKg": 0.1,
+    "price": 20
+  },
+  {
+    "id": "oil-of-bane",
+    "name": "Oil of Bane",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Rare",
+    "effectsText": [
+      "Coat your active weapon in Oil of Bane.",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Oil%20of%20Bane",
+    "weightKg": 0.1,
+    "price": 40
+  },
+  {
+    "id": "oil-of-combustion",
+    "name": "Oil of Combustion",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Rare",
+    "effectsText": [
+      "Coat your active weapon with oil.",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Oil%20of%20Combustion",
+    "weightKg": 0.1,
+    "price": 30
+  },
+  {
+    "id": "oil-of-diminution",
+    "name": "Oil of Diminution",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Coat your active weapon in Oil of Diminution, giving it a -1 Weapon Enchantment.",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Oil%20of%20Diminution",
+    "weightKg": 0.1,
+    "price": 30
+  },
+  {
+    "id": "oil-of-freezing",
+    "name": "Oil of Freezing",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Rare",
+    "effectsText": [
+      "Coat your active weapon in Oil of Freezing",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Oil%20of%20Freezing",
+    "weightKg": 0.1,
+    "price": 50
+  },
+  {
+    "id": "purple-worm-toxin",
+    "name": "Purple Worm Toxin",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Very Rare",
+    "effectsText": [
+      "Coat your active weapon with Purple Worm Toxin.",
+      "Action",
+      "Throw the poison",
+      "Range: 18 m (60 ft)",
+      "Creates area: Purple Worm Poison",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Purple%20Worm%20Toxin",
+    "weightKg": 0.2,
+    "price": 160
+  },
+  {
+    "id": "serpent-fang-toxin",
+    "name": "Serpent Fang Toxin",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Coat your active weapon with Serpent Venom Toxin.",
+      "Action",
+      "Throw the toxin.",
+      "Range: 18 m (60 ft)",
+      "Creates area: Serpent Venom",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Serpent%20Fang%20Toxin",
+    "weightKg": 0.2,
+    "price": 40
+  },
+  {
+    "id": "simple-toxin",
+    "name": "Simple Toxin",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Common",
+    "effectsText": [
+      "Coat your active weapon with a simple toxin.",
+      "Action",
+      "Throw the poison.",
+      "Range: 18 m (60 ft)",
+      "Creates area: Simple Toxin",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Simple%20Toxin",
+    "weightKg": 0.2,
+    "price": 25
+  },
+  {
+    "id": "thisobald-s-brewed-up-bellyglummer",
+    "name": "Thisobald's Brewed-Up Bellyglummer",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Very Rare",
+    "effectsText": [
+      "Coat your active weapon with Thisobald's Brewed-up Bellyglummer.",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Thisobald's%20Brewed-Up%20Bellyglummer",
+    "weightKg": 0.2,
+    "price": 65
+  },
+  {
+    "id": "wizardsbane-oil",
+    "name": "Wizardsbane Oil",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Coat your weapon with Wizardsbane Oil.",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Wizardsbane%20Oil",
+    "weightKg": 0.1,
+    "price": 40
+  },
+  {
+    "id": "wyvern-toxin",
+    "name": "Wyvern Toxin",
+    "slot": "Coating",
+    "itemType": "Weapon Coating",
+    "rarity": "Rare",
+    "effectsText": [
+      "Coat your active weapon with Wyvern Toxin.",
+      "Action",
+      "Throw the poison",
+      "Range: 18 m (60 ft)",
+      "Creates area: Wyvern Poison",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Wyvern%20Toxin",
+    "weightKg": 0.2,
+    "price": 65
+  },
+  {
+    "id": "elixir-of-acid-resistance",
+    "name": "Elixir of Acid Resistance",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Common",
+    "effectsText": [
+      "Consume the elixir to gain resistance to Acid damage.",
+      "Replaces effects of other elixirs when drunk.",
+      "Action",
+      "Throw the potion to grant resistance to Acid damage for all creatures in a small 1 m (3 ft) radius.",
+      "Replaces effects of other elixirs when applied this way as well.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Acid%20Resistance",
+    "weightKg": 0.1,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-arcane-cultivation",
+    "name": "Elixir of Arcane Cultivation",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Consume to grant an additional Level 1 Spell Slot.",
+      "Replaces effects of other elixirs when drunk.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Arcane%20Cultivation",
+    "weightKg": 0.1,
+    "price": 20
+  },
+  {
+    "id": "elixir-of-barkskin",
+    "name": "Elixir of Barkskin",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Drink to increase your Armour Class to 16.",
+      "Replaces effects from other elixirs when drunk.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Barkskin",
+    "weightKg": 0.1,
+    "price": 30
+  },
+  {
+    "id": "elixir-of-battlemage-s-power",
+    "name": "Elixir of Battlemage's Power",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Drink to increase the effectiveness of your spells. You gain 3 stacks of Arcane Acuity until your next long rest. Replaces effects from other elixirs when drunk.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Battlemage's%20Power",
+    "weightKg": 0.1,
+    "price": 65
+  },
+  {
+    "id": "elixir-of-bloodlust",
+    "name": "Elixir of Bloodlust",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Drink to enter a bloodlust. Once per turn when you kill a foe, you gain 5 temporary hit points and an additional Action.",
+      "Replaces effects from other elixirs when drunk.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Bloodlust",
+    "weightKg": 0.1,
+    "price": 25
+  },
+  {
+    "id": "elixir-of-cloud-giant-strength",
+    "name": "Elixir of Cloud Giant Strength",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Consume the elixir to increase your Strength to 27.",
+      "Replaces effects of other elixirs when drunk.",
+      "Action",
+      "Throw the elixir to increase the Strength of all creatures in a small 1 m (3 ft) radius.",
+      "Replaces effects of other elixirs when applied this way as well.",
+      "The effect lasts only 10 turns when applied this way.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Cloud%20Giant%20Strength",
+    "weightKg": 0.1,
+    "price": 160
+  },
+  {
+    "id": "elixir-of-cold-resistance",
+    "name": "Elixir of Cold Resistance",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Common",
+    "effectsText": [
+      "Consume the elixir to gain resistance to Cold damage.",
+      "Replaces effects of other elixirs when drunk.",
+      "Action",
+      "Throw the potion to grant resistance to Cold damage for all creatures in a small 1 m (3 ft) radius.",
+      "Replaces effects of other elixirs when applied this way as well.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Cold%20Resistance",
+    "weightKg": 0.2,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-darkvision",
+    "name": "Elixir of Darkvision",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Drink to gain the ability to see in the dark up to 12 m / 40 ft.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Darkvision",
+    "weightKg": 0.2,
+    "price": 25
+  },
+  {
+    "id": "elixir-of-dragonborn-prowess-acid",
+    "name": "Elixir of Dragonborn Prowess: Acid",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Upon consumption gain:",
+      "Advantage on Intimidation and Persuasion Checks",
+      "Resistance to Acid damage",
+      "Can cast Melf's Acid Arrow once until next Long Rest",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Dragonborn%20Prowess%3A%20Acid",
+    "weightKg": 0.1,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-dragonborn-prowess-fire",
+    "name": "Elixir of Dragonborn Prowess: Fire",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Upon consumption gain:",
+      "Advantage on Intimidation and Persuasion Checks",
+      "Resistance to Fire damage",
+      "Can cast Fireball once until next Long Rest",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Dragonborn%20Prowess%3A%20Fire",
+    "weightKg": 0.1,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-dragonborn-prowess-frost",
+    "name": "Elixir of Dragonborn Prowess: Frost",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Upon consumption gain:",
+      "Advantage on Intimidation and Persuasion Checks",
+      "Resistance to Cold damage",
+      "Can cast Ice Storm once until next Long Rest",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Dragonborn%20Prowess%3A%20Frost",
+    "weightKg": 0.1,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-dragonborn-prowess-lightning",
+    "name": "Elixir of Dragonborn Prowess: Lightning",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Upon consumption gain:",
+      "Advantage on Intimidation and Persuasion Checks",
+      "Resistance to Lightning damage",
+      "Can cast Lightning Bolt once until next Long Rest",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Dragonborn%20Prowess%3A%20Lightning",
+    "weightKg": 0.1,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-dragonborn-prowess-poison",
+    "name": "Elixir of Dragonborn Prowess: Poison",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Upon consumption gain:",
+      "Advantage on Intimidation and Persuasion Checks",
+      "Resistance to Poison damage",
+      "Can cast Ray of Sickness once until next Long Rest",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Dragonborn%20Prowess%3A%20Poison",
+    "weightKg": 0.1,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-dwarven-resilience",
+    "name": "Elixir of Dwarven Resilience",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Add your Proficiency Modifier to Saving Throws until you succeed on 3 of them or take a Long Rest.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Dwarven%20Resilience",
+    "weightKg": 0.1,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-elven-elegance",
+    "name": "Elixir of Elven Elegance",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Upon consumption gain:",
+      "An additional 10m of movement speed",
+      "Darkvision",
+      "Immune to Charmed until next Long Rest"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Elven%20Elegance",
+    "weightKg": 0.1,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-fire-resistance",
+    "name": "Elixir of Fire Resistance",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Consume the potion to gain Resistance to Fire damage and immunity to Burning.",
+      "Action",
+      "Throw the potion to grant Resistance to Fire damage and immunity to Burning for all creatures in a small radius.",
+      "AoE: 1 m (3 ft) Radius",
+      "Duration: Until Long rest",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Fire%20Resistance",
+    "weightKg": 0.2,
+    "price": 13
+  },
+  {
+    "id": "elixir-of-githyanki-providence",
+    "name": "Elixir of Githyanki Providence",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Upon consumption gain each only once until your next Long Rest:",
+      "Misty Step",
+      "Enhance Leap",
+      "Blur",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Githyanki%20Providence",
+    "weightKg": 0.1,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-gnomish-ingenuity",
+    "name": "Elixir of Gnomish Ingenuity",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "You are Proficient in Sleight of Hand Checks",
+      "Can cast Knock once until your next Long Rest",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Gnomish%20Ingenuity",
+    "weightKg": 0.1,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-guileful-movement",
+    "name": "Elixir of Guileful Movement",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Your movement speed can't be reduced by Difficult Terrain or spells. Can't be Paralysed or Restrained. Replaces effects from other elixirs when drunk.",
+      "Duration: long rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Guileful%20Movement",
+    "weightKg": 0.1,
+    "price": 40
+  },
+  {
+    "id": "elixir-of-half-elven-healing",
+    "name": "Elixir of Half-Elven Healing",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "You and surrounding allies regain hit points equal to your Constitution score."
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Half-Elven%20Healing",
+    "weightKg": 0.1,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-half-orcish-fury",
+    "name": "Elixir of Half-Orcish Fury",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "When you are Downed before your next Long Rest, you instead drop to 1 hit point thanks to the relentless will roiling in your veins.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Half-Orcish%20Fury",
+    "weightKg": 0.1,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-halfling-luck",
+    "name": "Elixir of Halfling Luck",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "The luck of the smallfolk grants you Advantage on Skill Checks until your next Long Rest.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Halfling%20Luck",
+    "weightKg": 0.1,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-heroism",
+    "name": "Elixir of Heroism",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Gain 10 temporary hit points and a 1d4 bonus to Attack Rolls and Saving Throws until the next long rest.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Heroism",
+    "weightKg": 0.2,
+    "price": 30
+  },
+  {
+    "id": "elixir-of-hill-giant-strength",
+    "name": "Elixir of Hill Giant Strength",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Consume the elixir to increase your Strength to 21.",
+      "Replaces effects of other elixirs when drunk.",
+      "Action",
+      "Throw the elixir to increase the Strength of all creatures in a small 1 m (3 ft) radius.",
+      "Replaces effects of other elixirs when applied this way as well.",
+      "The effect lasts only 10 turns when applied this way.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Hill%20Giant%20Strength",
+    "weightKg": 0.2,
+    "price": 30
+  },
+  {
+    "id": "elixir-of-human-versatility",
+    "name": "Elixir of Human Versatility",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Grants Proficiency in all skills until the next Long Rest.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Human%20Versatility",
+    "weightKg": 0.1,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-lightning-resistance",
+    "name": "Elixir of Lightning Resistance",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "You gain Resistance to Lightning damage and can no longer be Shocked, Electrocuted, Jolted, or otherwise affected by lightning.",
+      "Action",
+      "Throw the potion to grant Resistance to Lightning damage for all creatures in a small radius. Affected creatures can no longer be Shocked, Electrocuted, Jolted, or otherwise affected by lightning AoE: 1 m (3 ft) Radius.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Lightning%20Resistance",
+    "weightKg": 0.1,
+    "price": 20
+  },
+  {
+    "id": "elixir-of-necrotic-resistance",
+    "name": "Elixir of Necrotic Resistance",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Grants resistance to necrotic damage that last until a long rest.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Necrotic%20Resistance",
+    "weightKg": 0.1,
+    "price": 25
+  },
+  {
+    "id": "elixir-of-peerless-focus",
+    "name": "Elixir of Peerless Focus",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Consume to gain Advantage on Concentration checks and saving throws against charmed conditions as well immunity to Sleeping",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Peerless%20Focus",
+    "weightKg": 0.1,
+    "price": 20
+  },
+  {
+    "id": "elixir-of-poison-resistance",
+    "name": "Elixir of Poison Resistance",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "You gain Resistance to Poison damage and immunity to Poisoned.",
+      "Action",
+      "Throw the potion to grant Resistance to Poison damage and immunity to Poisoned for all creatures in a small radius.",
+      "AoE: 1 m (3 ft) Radius",
+      "Duration: Until Long rest",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Poison%20Resistance",
+    "weightKg": 0.2,
+    "price": 16
+  },
+  {
+    "id": "elixir-of-psychic-resistance",
+    "name": "Elixir of Psychic Resistance",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Very Rare",
+    "effectsText": [
+      "Consume the potion to gain Resistance to Psychic damage.",
+      "Action",
+      "Throw the potion to grant Resistance to Psychic damage for all creatures in a small radius.",
+      "AoE: 1 m (3 ft) Radius",
+      "Duration: Until Long rest",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Psychic%20Resistance",
+    "weightKg": 0.2,
+    "price": 100
+  },
+  {
+    "id": "elixir-of-radiant-resistance",
+    "name": "Elixir of Radiant Resistance",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Common",
+    "effectsText": [
+      "Consume the elixir to gain resistance to Radiant damage.",
+      "Replaces effects of other elixirs when drunk.",
+      "Action",
+      "Throw the potion to grant resistance to Radiant damage for all creatures in a small 1 m (3 ft) radius.",
+      "Replaces effects of other elixirs when applied this way as well.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Radiant%20Resistance",
+    "weightKg": 0.2,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-see-invisibility",
+    "name": "Elixir of See Invisibility",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Grants See Invisibility until next Long Rest.",
+      "Duration: long rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20See%20Invisibility",
+    "weightKg": 0.1,
+    "price": 40
+  },
+  {
+    "id": "elixir-of-the-colossus",
+    "name": "Elixir of the Colossus",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Drink to increase your size. Weapons deal an additional 1d4 damage. You gain Advantage on Strength Checks and saves.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20the%20Colossus",
+    "weightKg": 0.1,
+    "price": 25
+  },
+  {
+    "id": "elixir-of-tiefling-vice",
+    "name": "Elixir of Tiefling Vice",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Upon consumption gain each only once until your next Long Rest:",
+      "Thaumaturgy",
+      "Hellish Rebuke",
+      "Burning Hands",
+      "Flame Blade",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Tiefling%20Vice",
+    "weightKg": 0.1,
+    "price": 10
+  },
+  {
+    "id": "elixir-of-universal-resistance",
+    "name": "Elixir of Universal Resistance",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Very Rare",
+    "effectsText": [
+      "Gain Resistance to all damage for 10 rounds.",
+      "Duration: 10 turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Universal%20Resistance",
+    "weightKg": 0.1,
+    "price": 200
+  },
+  {
+    "id": "elixir-of-viciousness",
+    "name": "Elixir of Viciousness",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "The number you need to roll to land a Critical Hit is reduced by 1.",
+      "Some class features reduce the Critical Hit number; this elixir's effect is additive",
+      "Replaces effects from other elixirs when drunk.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Viciousness",
+    "weightKg": 0.1,
+    "price": 50
+  },
+  {
+    "id": "elixir-of-vigilance",
+    "name": "Elixir of Vigilance",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Drink to gain a +5 bonus to Initiative. In addition, you can't be Surprised. Replaces effects from other elixirs when drunk.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Elixir%20of%20Vigilance",
+    "weightKg": 0.4,
+    "price": 25
+  },
+  {
+    "id": "greater-elixir-of-arcane-cultivation",
+    "name": "Greater Elixir of Arcane Cultivation",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Consume to grant an additional Level 2 Spell Slot.",
+      "Replaces effects of other elixirs when drunk.",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Greater%20Elixir%20of%20Arcane%20Cultivation",
+    "weightKg": 0.1,
+    "price": 30
+  },
+  {
+    "id": "potion-of-universal-resistance",
+    "name": "Potion of Universal Resistance",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Uncommon",
+    "effectsText": [
+      "Consume the potion to gain Resistance to Poison damage and immunity to Poisoned.",
+      "Duration: Until Long rest"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Potion%20of%20Universal%20Resistance",
+    "weightKg": 0.1,
+    "price": 16
+  },
+  {
+    "id": "superior-elixir-of-arcane-cultivation",
+    "name": "Superior Elixir of Arcane Cultivation",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Grants Level 3 Spell Slot",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Superior%20Elixir%20of%20Arcane%20Cultivation",
+    "weightKg": 0.1,
+    "price": 65
+  },
+  {
+    "id": "supreme-elixir-of-arcane-cultivation",
+    "name": "Supreme Elixir of Arcane Cultivation",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Very Rare",
+    "effectsText": [
+      "Grants Level 4 Spell Slot",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Supreme%20Elixir%20of%20Arcane%20Cultivation",
+    "weightKg": 0.1,
+    "price": 160
+  },
+  {
+    "id": "tadpole-elixir",
+    "name": "Tadpole Elixir",
+    "slot": "Elixir",
+    "itemType": "Elixir",
+    "rarity": "Rare",
+    "effectsText": [
+      "Grants Psionic Weakening and Psionic Enrichment (after using an Illithid power).",
+      "Duration: Long Rest turns"
+    ],
+    "effects": [],
+    "source": {
+      "where": ""
+    },
+    "wikiUrl": "https://bg3.wiki/wiki/Tadpole%20Elixir",
+    "weightKg": 0.1,
+    "price": 30
+  }
+]

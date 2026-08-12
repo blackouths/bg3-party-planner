@@ -2,6 +2,7 @@ import { usePartyStore } from '../store/partyStore';
 import { RACES, RACE_NAMES } from '../data/races';
 import { BACKGROUND_NAMES } from '../data/backgrounds';
 import { COMPANION_PRESETS, presetPatch } from '../data/companions';
+import { DEITIES } from '../data/deities';
 import AbilityEditor from '../components/build/AbilityEditor';
 import ClassEditor from '../components/build/ClassEditor';
 import SkillPicker from '../components/build/SkillPicker';
@@ -118,6 +119,20 @@ export default function BuildView() {
                     {BACKGROUND_NAMES.map((b) => <option key={b} value={b}>{b}</option>)}
                   </select>
                 </label>
+                {member.classes.some((c) => c.class === 'Cleric') && (
+                  <label className="field">
+                    <span>Deity</span>
+                    <select
+                      value={member.deity ?? ''}
+                      onChange={(e) =>
+                        updateMember(activeSlot, { deity: e.target.value || undefined })
+                      }
+                    >
+                      <option value="">—</option>
+                      {DEITIES.map((d) => <option key={d} value={d}>{d}</option>)}
+                    </select>
+                  </label>
+                )}
               </div>
             </section>
 

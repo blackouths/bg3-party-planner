@@ -1,7 +1,8 @@
 import type { Character } from '../model/types';
 import { usePartyStore } from '../store/partyStore';
 import { RACES, RACE_NAMES } from '../data/races';
-import { CLASS_NAMES } from '../data/classes';
+import { CLASSES, CLASS_NAMES } from '../data/classes';
+import { DEITIES } from '../data/deities';
 import { maxHP, armourClass, totalLevel } from '../model/selectors';
 
 export default function PartySlot({ member, slot }: { member: Character; slot: number }) {
@@ -10,6 +11,10 @@ export default function PartySlot({ member, slot }: { member: Character; slot: n
 
   const primary = member.classes[0] ?? { class: '', level: 1 };
   const subraces = RACES[member.race]?.subraces ?? [];
+  const classInfo = CLASSES[primary.class];
+  const showSubclass =
+    classInfo && (primary.level || 0) >= classInfo.subclassLevel;
+  const isCleric = member.classes.some((c) => c.class === 'Cleric');
 
   const setClass = (patch: Partial<typeof primary>) => {
     const classes = [...member.classes];
@@ -72,6 +77,32 @@ export default function PartySlot({ member, slot }: { member: Character; slot: n
           ))}
         </select>
       </label>
+
+      {showSubclass && (
+        <label className="field">
+          <span>Subclass</span>
+          <select
+            value={primary.subclass ?? ''}
+            onChange={(e) => setClass({ subclass: e.target.value || undefined })}
+          >
+            <option value="">—</option>
+            {classInfo.subclasses.map((s) => <option key={s} value={s}>{s}</option>)}
+          </select>
+        </label>
+      )}
+
+      {isCleric && (
+        <label className="field">
+          <span>Deity</span>
+          <select
+            value={member.deity ?? ''}
+            onChange={(e) => updateMember(slot, { deity: e.target.value || undefined })}
+          >
+            <option value="">—</option>
+            {DEITIES.map((d) => <option key={d} value={d}>{d}</option>)}
+          </select>
+        </label>
+      )}
 
       <div className="slot-stats">
         <span>Lv {totalLevel(member)}</span>
