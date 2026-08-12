@@ -11,6 +11,7 @@ export * from './coverage';
 export * from './gear';
 export * from './build';
 export * from './buffs';
+export * from './campBuffs';
 
 // One-shot resolution of a character's live sheet, for the Build view.
 export function resolveCharacter(character: Character) {

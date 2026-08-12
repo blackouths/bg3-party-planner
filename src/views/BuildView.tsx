@@ -9,6 +9,7 @@ import SkillPicker from '../components/build/SkillPicker';
 import FeatPicker from '../components/build/FeatPicker';
 import SpellPicker from '../components/build/SpellPicker';
 import BuffPicker from '../components/build/BuffPicker';
+import CampBuffPicker from '../components/build/CampBuffPicker';
 import CharacterSheet from '../components/build/CharacterSheet';
 
 const ORIGINS = [
@@ -142,6 +143,7 @@ export default function BuildView() {
             <FeatPicker member={member} slot={activeSlot} />
             <SpellPicker member={member} slot={activeSlot} />
             <BuffPicker member={member} slot={activeSlot} />
+            <CampBuffPicker member={member} slot={activeSlot} />
           </div>
 
           <CharacterSheet member={member} />

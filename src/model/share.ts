@@ -61,6 +61,9 @@ function sanitizeMember(raw: unknown): Character | null {
     buffs: Array.isArray(m.buffs)
       ? (m.buffs as Character['buffs']).filter((b) => b && typeof b.id === 'string')
       : [],
+    campBuffs: Array.isArray(m.campBuffs)
+      ? (m.campBuffs as Character['campBuffs']).filter((b) => b && typeof b.id === 'string')
+      : [],
     spells: {
       known: Array.isArray(m.spells?.known) ? m.spells.known : [],
       prepared: Array.isArray(m.spells?.prepared) ? m.spells.prepared : [],

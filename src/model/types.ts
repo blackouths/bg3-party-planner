@@ -45,6 +45,8 @@ export type ParsedEffect =
   | { kind: 'abilityBonus'; ability: Ability; value: number }
   | { kind: 'saveBonus'; ability: Ability | 'all'; value: number }
   | { kind: 'skillBonus'; skill: SkillName; value: number }
+  | { kind: 'maxHpBonus'; value: number }
+  | { kind: 'speedBonus'; valueM: number }
   | { kind: 'resistance'; damage: string }
   | { kind: 'grantsSpell'; spell: string; recharge: 'short' | 'long' | 'none' }
   | { kind: 'advantage'; on: string };
@@ -122,6 +124,13 @@ export interface BuffSelection {
   ability?: Ability;
 }
 
+// A camp-cast buff planned for this character (see data/campBuffs.ts).
+// `upcastLevel` applies to scalable spells like Aid.
+export interface CampBuffSelection {
+  id: string;
+  upcastLevel?: number;
+}
+
 export interface Character {
   id: string;
   origin: string;                 // Tav / Dark Urge / Shadowheart / ...
@@ -136,6 +145,7 @@ export interface Character {
   skillProficiencies: SkillName[];
   feats: FeatSelection[];
   buffs: BuffSelection[];       // permanent bonuses (Zaith'isk, Ethel's hair...)
+  campBuffs: CampBuffSelection[]; // pre-adventure camp casts (Heroes' Feast...)
   spells: { known: string[]; prepared: string[] };
   equipment: Partial<Record<GearSlotInstance, string>>; // GearSlotInstance -> MagicItem.id
 }

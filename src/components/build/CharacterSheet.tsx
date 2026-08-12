@@ -2,6 +2,7 @@ import type { Character } from '../../model/types';
 import { ABILITIES } from '../../model/types';
 import { CLASSES } from '../../data/classes';
 import { BUFF_BY_ID } from '../../data/buffs';
+import { CAMP_BUFF_BY_ID } from '../../data/campBuffs';
 import { resolveCharacter, equippedItems } from '../../model/selectors';
 
 const fmt = (n: number) => (n >= 0 ? `+${n}` : `${n}`);
@@ -109,6 +110,24 @@ export default function CharacterSheet({ member }: { member: Character }) {
                 ✦ {buff.name}
                 {b.ability && buff.abilityPick && (
                   <span className="sheet-buff-pick"> ({buff.abilityPick.label} {b.ability})</span>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {member.campBuffs.length > 0 && (
+        <div className="sheet-section">
+          <h4>Camp Casts</h4>
+          {member.campBuffs.map((b) => {
+            const buff = CAMP_BUFF_BY_ID.get(b.id);
+            if (!buff) return null;
+            return (
+              <div key={b.id} className="sheet-buff" title={buff.description}>
+                ⛺ {buff.name}
+                {b.upcastLevel && buff.upcast && b.upcastLevel > buff.upcast.minLevel && (
+                  <span className="sheet-buff-pick"> (slot {b.upcastLevel})</span>
                 )}
               </div>
             );

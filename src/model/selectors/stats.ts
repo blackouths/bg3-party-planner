@@ -7,6 +7,7 @@ import { resolveAbilities, abilityModifiers } from './abilities';
 import { equippedItems, gearEffects } from './gear';
 import { fixedSkillGrants } from './build';
 import { buffEffects } from './buffs';
+import { campBuffEffects } from './campBuffs';
 
 export function totalLevel(character: Character): number {
   return character.classes.reduce((sum, cl) => sum + (cl.level || 0), 0);
@@ -36,6 +37,10 @@ export function maxHP(character: Character): number {
   if (character.feats.some((f) => f.name === 'Tough')) {
     hp += 2 * totalLevel(character);
   }
+  // Camp casts: Heroes' Feast +12, Aid +5..25.
+  for (const e of campBuffEffects(character)) {
+    if (e.kind === 'maxHpBonus') hp += e.value;
+  }
   return Math.max(hp, 1);
 }
 
@@ -59,7 +64,12 @@ export function armourClass(character: Character): number {
   }
 
   if (items.some((i) => i.slot === 'Shield')) ac += 2; // base shield
-  for (const e of gearEffects(character)) if (e.kind === 'acBonus') ac += e.value;
+  const bonuses = [
+    ...gearEffects(character),
+    ...buffEffects(character),
+    ...campBuffEffects(character), // Warding Bond +1
+  ];
+  for (const e of bonuses) if (e.kind === 'acBonus') ac += e.value;
 
   return ac;
 }
@@ -112,7 +122,11 @@ export function resolveSaves(character: Character): Record<Ability, number> {
 
   let flatAll = 0;
   const perAbility: Partial<Record<Ability, number>> = {};
-  for (const e of [...gearEffects(character), ...buffEffects(character)]) {
+  for (const e of [
+    ...gearEffects(character),
+    ...buffEffects(character),
+    ...campBuffEffects(character), // Warding Bond +1
+  ]) {
     if (e.kind === 'saveBonus') {
       if (e.ability === 'all') flatAll += e.value;
       else perAbility[e.ability] = (perAbility[e.ability] ?? 0) + e.value;
@@ -128,7 +142,11 @@ export function resolveSaves(character: Character): Record<Ability, number> {
 }
 
 export function movementSpeedM(character: Character): number {
-  return RACES[character.race]?.speedM ?? 9;
+  let speed = RACES[character.race]?.speedM ?? 9;
+  for (const e of campBuffEffects(character)) {
+    if (e.kind === 'speedBonus') speed += e.valueM; // Longstrider +3m
+  }
+  return speed;
 }
 
 export function darkvisionM(character: Character): number {

@@ -19,6 +19,7 @@ export function createEmptyCharacter(id?: string): Character {
     skillProficiencies: [],
     feats: [],
     buffs: [],
+    campBuffs: [],
     spells: { known: [], prepared: [] },
     equipment: {},
   };
@@ -107,8 +108,26 @@ export const usePartyStore = create<PartyState>()(
     }),
     {
       name: 'bg3-party-planner',
-      version: 3,
+      version: 4,
       partialize: (state) => ({ party: state.party }),
+      // Normalize on every rehydrate: guarantees array/object fields exist even
+      // if storage drifted (e.g. persisted mid-HMR before a migration bumped).
+      merge: (persisted, current) => {
+        const p = persisted as { party?: Party } | undefined;
+        if (p?.party?.members) {
+          for (const m of p.party.members) {
+            if (!m) continue;
+            m.feats = m.feats ?? [];
+            m.buffs = m.buffs ?? [];
+            m.campBuffs = m.campBuffs ?? [];
+            m.abilityBoosts = m.abilityBoosts ?? [];
+            m.skillProficiencies = m.skillProficiencies ?? [];
+            m.spells = m.spells ?? { known: [], prepared: [] };
+            m.equipment = m.equipment ?? {};
+          }
+        }
+        return { ...current, ...p };
+      },
       migrate: (persisted: unknown, version: number) => {
         const state = persisted as { party?: Party };
         if (state?.party?.members) {
@@ -123,6 +142,10 @@ export const usePartyStore = create<PartyState>()(
             if (version < 3) {
               // v3 added permanent buffs.
               m.buffs = m.buffs ?? [];
+            }
+            if (version < 4) {
+              // v4 added camp-cast buffs.
+              m.campBuffs = m.campBuffs ?? [];
             }
           }
         }
