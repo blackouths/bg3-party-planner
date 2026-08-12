@@ -161,6 +161,15 @@ body {
 .slot-head { display: flex; justify-content: space-between; align-items: center; }
 .slot-sub { color: var(--text-muted); font-size: 13px; margin-top: 6px; }
 
+/* Read-only party stat card */
+.party-sheet { display: flex; flex-direction: column; gap: 10px; }
+.party-sheet-name { color: var(--gold); font-size: 16px; }
+.party-sheet .sheet-sub { margin-top: -6px; }
+.party-sheet .sheet-skills { grid-template-columns: 1fr 1fr; }
+.mod-neg { color: #d05a5a; }
+.mod-pos { color: var(--text); }
+.sheet-skill.prof .mod-pos { color: var(--gold); }
+
 .member-tabs { display: flex; gap: 4px; flex-wrap: wrap; }
 .member-tab {
   background: var(--bg-slot);
