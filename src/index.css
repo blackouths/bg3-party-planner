@@ -116,6 +116,48 @@ body {
   background: var(--bg-slot);
   padding: 12px;
 }
+
+/* Empty-slot origin chooser */
+.slot-chooser {
+  border: 1px solid var(--gold-dim);
+  border-radius: 6px;
+  background: var(--bg-slot);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 340px;
+  overflow-y: auto;
+}
+.slot-chooser-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: var(--gold);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+}
+.chooser-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  padding: 6px 9px;
+  cursor: pointer;
+  font-size: 13px;
+  text-align: left;
+}
+.chooser-option:hover { border-color: var(--gold-dim); }
+.chooser-custom { color: var(--gold); }
+.chooser-sub { color: var(--text-muted); font-size: 11px; }
 .slot-head { display: flex; justify-content: space-between; align-items: center; }
 .slot-sub { color: var(--text-muted); font-size: 13px; margin-top: 6px; }
 
