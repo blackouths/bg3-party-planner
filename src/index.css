@@ -170,6 +170,16 @@ body {
 .mod-pos { color: var(--text); }
 .sheet-skill.prof .mod-pos { color: var(--gold); }
 
+.party-gear-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 11px;
+  padding: 1px 0;
+}
+.party-gear-slot { color: var(--text-muted); width: 82px; flex-shrink: 0; }
+.party-gear-item { color: var(--text); display: flex; align-items: center; gap: 6px; }
+
 .member-tabs { display: flex; gap: 4px; flex-wrap: wrap; }
 .member-tab {
   background: var(--bg-slot);

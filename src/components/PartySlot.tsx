@@ -2,6 +2,8 @@ import type { Character } from '../model/types';
 import { ABILITIES } from '../model/types';
 import { usePartyStore } from '../store/partyStore';
 import { resolveCharacter } from '../model/selectors';
+import { getItem } from '../model/itemIndex';
+import { GEAR_SLOTS } from '../data/gearSlots';
 
 const fmt = (n: number) => (n >= 0 ? `+${n}` : `${n}`);
 const sign = (n: number) => (n < 0 ? 'mod-neg' : 'mod-pos');
@@ -69,6 +71,35 @@ export default function PartySlot({ member, slot }: { member: Character; slot: n
           ))}
         </div>
       </div>
+
+      <GearList member={member} />
+    </div>
+  );
+}
+
+// Equipped items in slot order, with the effect text on hover.
+function GearList({ member }: { member: Character }) {
+  const rows = GEAR_SLOTS
+    .map((def) => ({ def, item: getItem(member.equipment[def.slot]) }))
+    .filter((r) => r.item);
+  if (rows.length === 0) return null;
+
+  return (
+    <div className="sheet-section">
+      <h4>Gear</h4>
+      {rows.map(({ def, item }) => (
+        <div
+          key={def.slot}
+          className="party-gear-row"
+          title={item!.effectsText.join('\n')}
+        >
+          <span className="party-gear-slot">{def.label}</span>
+          <span className="party-gear-item">
+            <span className={`dot rarity-${item!.rarity.replace(/\s/g, '').toLowerCase()}`} />
+            {item!.name}
+          </span>
+        </div>
+      ))}
     </div>
   );
 }
