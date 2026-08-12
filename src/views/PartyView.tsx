@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { usePartyStore } from '../store/partyStore';
 import { COMPANION_PRESETS, presetPatch } from '../data/companions';
+import { partyGearConflicts, partyBuffConflicts } from '../model/selectors';
 import PartySlot from '../components/PartySlot';
 import CoveragePanels from '../components/CoveragePanels';
 
@@ -23,8 +24,27 @@ export default function PartyView() {
     setChoosing(null);
   };
 
+  const gearConflicts = partyGearConflicts(party);
+  const buffConflicts = partyBuffConflicts(party);
+
   return (
     <div className="view">
+      {(gearConflicts.length > 0 || buffConflicts.length > 0) && (
+        <div className="conflict-banner">
+          <strong>⚠ One-per-run conflicts:</strong>
+          {gearConflicts.map((c) => (
+            <span key={c.itemId} className="conflict-item">
+              {c.name} ({c.holders.map((h) => h.member).join(', ')})
+            </span>
+          ))}
+          {buffConflicts.map((c, i) => (
+            <span key={`b${i}`} className="conflict-item">
+              {c.name} ({c.members.join(', ')})
+            </span>
+          ))}
+        </div>
+      )}
+
       <div className="party-grid">
         {party.members.map((member, slot) => (
           <div key={slot} className="party-slot">

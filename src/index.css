@@ -179,6 +179,8 @@ body {
 }
 .party-gear-slot { color: var(--text-muted); width: 82px; flex-shrink: 0; }
 .party-gear-item { color: var(--text); display: flex; align-items: center; gap: 6px; }
+.gear-clash .party-gear-item { color: #e0b080; }
+.gear-clash-mark { color: #d05a5a; font-size: 11px; }
 
 .member-tabs { display: flex; gap: 4px; flex-wrap: wrap; }
 .member-tab {

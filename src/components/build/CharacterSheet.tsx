@@ -3,13 +3,16 @@ import { ABILITIES } from '../../model/types';
 import { CLASSES } from '../../data/classes';
 import { BUFF_BY_ID } from '../../data/buffs';
 import { CAMP_BUFF_BY_ID } from '../../data/campBuffs';
-import { resolveCharacter, equippedItems } from '../../model/selectors';
+import { resolveCharacter, equippedItems, partyGearConflicts } from '../../model/selectors';
+import { usePartyStore } from '../../store/partyStore';
 
 const fmt = (n: number) => (n >= 0 ? `+${n}` : `${n}`);
 
 export default function CharacterSheet({ member }: { member: Character }) {
+  const party = usePartyStore((s) => s.party);
   const r = resolveCharacter(member);
   const gear = equippedItems(member);
+  const conflicted = new Set(partyGearConflicts(party).map((c) => c.itemId));
 
   const classLine = member.classes
     .filter((c) => c.class)
@@ -139,9 +142,14 @@ export default function CharacterSheet({ member }: { member: Character }) {
         <div className="sheet-section">
           <h4>Equipped</h4>
           {gear.map((g) => (
-            <div key={g.id} className="sheet-gear">
+            <div
+              key={g.id}
+              className="sheet-gear"
+              title={conflicted.has(g.id) ? '⚠ Also equipped on another party member!' : undefined}
+            >
               <span className={`dot rarity-${g.rarity.replace(/\s/g, '').toLowerCase()}`} />
               {g.name}
+              {conflicted.has(g.id) && <span className="gear-clash-mark">⚠</span>}
             </div>
           ))}
         </div>

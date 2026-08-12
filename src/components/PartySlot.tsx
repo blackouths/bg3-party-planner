@@ -1,7 +1,7 @@
 import type { Character } from '../model/types';
 import { ABILITIES } from '../model/types';
 import { usePartyStore } from '../store/partyStore';
-import { resolveCharacter } from '../model/selectors';
+import { partyGearConflicts, resolveCharacter } from '../model/selectors';
 import { getItem } from '../model/itemIndex';
 import { GEAR_SLOTS } from '../data/gearSlots';
 
@@ -77,8 +77,12 @@ export default function PartySlot({ member, slot }: { member: Character; slot: n
   );
 }
 
-// Equipped items in slot order, with the effect text on hover.
+// Equipped items in slot order, with the effect text on hover. Items claimed
+// by more than one member (impossible in a single Honor Mode run) get a ⚠.
 function GearList({ member }: { member: Character }) {
+  const party = usePartyStore((s) => s.party);
+  const conflicted = new Set(partyGearConflicts(party).map((c) => c.itemId));
+
   const rows = GEAR_SLOTS
     .map((def) => ({ def, item: getItem(member.equipment[def.slot]) }))
     .filter((r) => r.item);
@@ -87,19 +91,26 @@ function GearList({ member }: { member: Character }) {
   return (
     <div className="sheet-section">
       <h4>Gear</h4>
-      {rows.map(({ def, item }) => (
-        <div
-          key={def.slot}
-          className="party-gear-row"
-          title={item!.effectsText.join('\n')}
-        >
-          <span className="party-gear-slot">{def.label}</span>
-          <span className="party-gear-item">
-            <span className={`dot rarity-${item!.rarity.replace(/\s/g, '').toLowerCase()}`} />
-            {item!.name}
-          </span>
-        </div>
-      ))}
+      {rows.map(({ def, item }) => {
+        const clash = conflicted.has(item!.id);
+        return (
+          <div
+            key={def.slot}
+            className={clash ? 'party-gear-row gear-clash' : 'party-gear-row'}
+            title={
+              (clash ? '⚠ Also equipped on another party member!\n\n' : '') +
+              item!.effectsText.join('\n')
+            }
+          >
+            <span className="party-gear-slot">{def.label}</span>
+            <span className="party-gear-item">
+              <span className={`dot rarity-${item!.rarity.replace(/\s/g, '').toLowerCase()}`} />
+              {item!.name}
+              {clash && <span className="gear-clash-mark">⚠</span>}
+            </span>
+          </div>
+        );
+      })}
     </div>
   );
 }
