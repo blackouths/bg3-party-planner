@@ -152,4 +152,5 @@ export interface Character {
 
 export interface Party {
   members: (Character | null)[];  // fixed length 4
+  wishlist: string[];             // party-wide "items to keep" (MagicItem ids)
 }

@@ -19,10 +19,11 @@ export default function AbilityEditor({ member, slot }: { member: Character; slo
   const racial2 = member.abilityBoosts.find((b) => b.origin === 'race' && b.value === 2)?.ability ?? '';
   const racial1 = member.abilityBoosts.find((b) => b.origin === 'race' && b.value === 1)?.ability ?? '';
 
+  // No hard budget block: companion presets (Minthara) legitimately exceed
+  // player point-buy, and locking the editor would make them uneditable.
+  // The counter below goes red instead.
   const setBase = (ability: Ability, next: number) => {
     if (next < 8 || next > 15) return;
-    const delta = (COST[next] ?? 0) - (COST[member.baseAbilities[ability]] ?? 0);
-    if (delta > left) return;
     updateMember(slot, {
       baseAbilities: { ...member.baseAbilities, [ability]: next },
     });
@@ -42,7 +43,9 @@ export default function AbilityEditor({ member, slot }: { member: Character; slo
     <section className="panel">
       <h3>
         Abilities
-        <span className="count">{left} points left</span>
+        <span className={left < 0 ? 'count count-over' : 'count'}>
+          {left} points left{left < 0 ? ' — over point-buy (companion preset)' : ''}
+        </span>
       </h3>
 
       <div className="racial-row">
@@ -75,10 +78,7 @@ export default function AbilityEditor({ member, slot }: { member: Character; slo
               <div className="ability-stepper">
                 <button onClick={() => setBase(a, base - 1)} disabled={base <= 8}>−</button>
                 <span className="ability-base">{base}</span>
-                <button
-                  onClick={() => setBase(a, base + 1)}
-                  disabled={base >= 15 || (COST[base + 1] ?? 99) - (COST[base] ?? 0) > left}
-                >
+                <button onClick={() => setBase(a, base + 1)} disabled={base >= 15}>
                   +
                 </button>
               </div>

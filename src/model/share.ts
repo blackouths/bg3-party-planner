@@ -28,7 +28,10 @@ export function decodeParty(code: string): Party | null {
       .slice(0, 4)
       .map((m: unknown) => sanitizeMember(m));
     while (members.length < 4) members.push(null);
-    return { members };
+    const wishlist = Array.isArray(payload.party.wishlist)
+      ? (payload.party.wishlist as unknown[]).filter((id): id is string => typeof id === 'string')
+      : [];
+    return { members, wishlist };
   } catch {
     return null;
   }

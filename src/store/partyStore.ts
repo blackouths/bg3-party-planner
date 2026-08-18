@@ -32,7 +32,7 @@ function newCharId(): string {
     : `char-${Math.random().toString(36).slice(2, 10)}`;
 }
 
-const EMPTY_PARTY: Party = { members: [null, null, null, null] };
+const EMPTY_PARTY: Party = { members: [null, null, null, null], wishlist: [] };
 
 interface PartyState {
   party: Party;
@@ -45,6 +45,7 @@ interface PartyState {
   updateMember: (slot: number, patch: Partial<Character>) => void;
   equipItem: (slot: number, gearSlot: GearSlotInstance, itemId: string) => void;
   unequipItem: (slot: number, gearSlot: GearSlotInstance) => void;
+  toggleWishlist: (itemId: string) => void;
 }
 
 export const usePartyStore = create<PartyState>()(
@@ -63,14 +64,14 @@ export const usePartyStore = create<PartyState>()(
         set((state) => {
           const members = [...state.party.members];
           if (!members[slot]) members[slot] = createEmptyCharacter();
-          return { party: { members } };
+          return { party: { ...state.party, members } };
         }),
 
       removeMember: (slot) =>
         set((state) => {
           const members = [...state.party.members];
           members[slot] = null;
-          return { party: { members } };
+          return { party: { ...state.party, members } };
         }),
 
       updateMember: (slot, patch) =>
@@ -78,7 +79,7 @@ export const usePartyStore = create<PartyState>()(
           const members = [...state.party.members];
           const current = members[slot];
           if (current) members[slot] = { ...current, ...patch };
-          return { party: { members } };
+          return { party: { ...state.party, members } };
         }),
 
       equipItem: (slot, gearSlot, itemId) =>
@@ -91,7 +92,7 @@ export const usePartyStore = create<PartyState>()(
               equipment: { ...current.equipment, [gearSlot]: itemId },
             };
           }
-          return { party: { members } };
+          return { party: { ...state.party, members } };
         }),
 
       unequipItem: (slot, gearSlot) =>
@@ -103,7 +104,16 @@ export const usePartyStore = create<PartyState>()(
             delete equipment[gearSlot];
             members[slot] = { ...current, equipment };
           }
-          return { party: { members } };
+          return { party: { ...state.party, members } };
+        }),
+
+      toggleWishlist: (itemId) =>
+        set((state) => {
+          const list = state.party.wishlist ?? [];
+          const wishlist = list.includes(itemId)
+            ? list.filter((id) => id !== itemId)
+            : [...list, itemId];
+          return { party: { ...state.party, wishlist } };
         }),
     }),
     {
@@ -114,6 +124,7 @@ export const usePartyStore = create<PartyState>()(
       // if storage drifted (e.g. persisted mid-HMR before a migration bumped).
       merge: (persisted, current) => {
         const p = persisted as { party?: Party } | undefined;
+        if (p?.party) p.party.wishlist = p.party.wishlist ?? [];
         if (p?.party?.members) {
           for (const m of p.party.members) {
             if (!m) continue;

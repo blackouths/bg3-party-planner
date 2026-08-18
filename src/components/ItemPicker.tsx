@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { Act, EquipSlot, MagicItem, Rarity } from '../model/types';
 import { ITEMS } from '../model/itemIndex';
+import { usePartyStore } from '../store/partyStore';
 import EffectText from './EffectText';
 
 const ACTS: (Act | 'All Acts')[] = ['All Acts', 'Act 1', 'Act 2', 'Act 3'];
@@ -90,6 +91,9 @@ export default function ItemPicker({
 }
 
 function ItemRow({ item, onPick }: { item: MagicItem; onPick: () => void }) {
+  const wishlisted = usePartyStore((s) => s.party.wishlist?.includes(item.id) ?? false);
+  const toggleWishlist = usePartyStore((s) => s.toggleWishlist);
+
   return (
     <div
       className="item-row"
@@ -101,6 +105,14 @@ function ItemRow({ item, onPick }: { item: MagicItem; onPick: () => void }) {
       <div className="item-row-head">
         <span className="item-name">{item.name}</span>
         <span className="item-row-badges">
+          <span
+            role="button"
+            className={wishlisted ? 'wish-star on' : 'wish-star'}
+            title={wishlisted ? 'Remove from party wishlist' : 'Add to party wishlist'}
+            onClick={(e) => { e.stopPropagation(); toggleWishlist(item.id); }}
+          >
+            {wishlisted ? '★' : '☆'}
+          </span>
           {item.source.act && <span className="act-chip">{item.source.act}</span>}
           <span className={`rarity rarity-${item.rarity.replace(/\s/g, '').toLowerCase()}`}>
             {item.rarity}
